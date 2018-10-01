@@ -10,12 +10,14 @@
     "@types/node": "^10.11.3",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "typescript-eslint-parser": "^19.0.2"
   },
   "scripts": {
+    "lint": "eslint src --ext ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist/*",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && npm install && tsc",
     "start-dev": "npm run build && SET PORT=6000 && node dist/",
     "start": "npm run build && node dist/"
   },
