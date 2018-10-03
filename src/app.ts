@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import { Request, Response } from "express";
+import * as httpStatus from "http-status";
 
 class App {
 
@@ -21,12 +22,12 @@ class App {
         const router = express.Router();
 
         router.get("/", (req: Request, res: Response) => {
-            res.status(200).send({ message: "Hello World!" });
+            res.status(httpStatus.OK).send({ message: "Hello World!" });
         });
 
         router.post("/", (req: Request, res: Response) => {
             const data = req.body;
-            res.status(200).send(data);
+            res.status(httpStatus.OK).send(data);
         });
 
         this.app.use("/", router);
