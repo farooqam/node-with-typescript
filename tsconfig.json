@@ -13,10 +13,10 @@
       "src/**/*.ts"
     ],
     "files": [
-      "./node_modules/ts-node/dist/index.d.ts",
       "./node_modules/@types/node/index.d.ts",
       "./node_modules/@types/express/index.d.ts",
-      "./node_modules/@types/body-parser/index.d.ts"
+      "./node_modules/@types/body-parser/index.d.ts",
+      "./node_modules/@types/http-status/index.d.ts"
     ]
   }
   
