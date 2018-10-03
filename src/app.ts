@@ -1,22 +1,36 @@
+import * as bodyParser from "body-parser";
 import * as express from "express";
+import { Request, Response } from "express";
 
 class App {
-    public express;
+
+    public app: express.Application;
 
     constructor() {
-        this.express = express();
-        this.mountRoutes();
+        this.app = express();
+        this.config();
+        this.routes();
     }
 
-    private mountRoutes() : void {
+    private config(): void {
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({ extended: false }));
+    }
+
+    private routes(): void {
         const router = express.Router();
 
-        router.get("/", (req, res) => {
-            res.json({message: "Hello World!"});
+        router.get("/", (req: Request, res: Response) => {
+            res.status(200).send({ message: "Hello World!" });
         });
 
-        this.express.use("/", router);
+        router.post("/", (req: Request, res: Response) => {
+            const data = req.body;
+            res.status(200).send(data);
+        });
+
+        this.app.use("/", router);
     }
 }
 
-export default new App().express;
+export default new App().app;
