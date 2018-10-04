@@ -10,7 +10,8 @@
 *.sln.docstates
 
 dist/
-
+coverage/
+.nyc_output/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
