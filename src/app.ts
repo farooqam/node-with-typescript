@@ -27,7 +27,7 @@ class App {
 
         router.post("/", (req: Request, res: Response) => {
             const data = req.body;
-            res.status(httpStatus.OK).send(data);
+            res.status(httpStatus.CREATED).send(data);
         });
 
         this.app.use("/", router);
