@@ -21,7 +21,7 @@ class App {
     private routes(): void {
         const router = express.Router();
 
-        router.get("/", (req: Request, res: Response) => {
+        router.get("/", (_: Request, res: Response) => {
             res.status(httpStatus.OK).send({ message: "Hello World!" });
         });
 
