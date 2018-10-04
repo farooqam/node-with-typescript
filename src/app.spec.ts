@@ -2,7 +2,6 @@ import { expect } from "chai";
 import * as chai from "chai";
 import chaiHttp = require("chai-http");
 import * as httpStatus from "http-status";
-import "mocha";
 import app from "./app";
 
 chai.use(chaiHttp);
